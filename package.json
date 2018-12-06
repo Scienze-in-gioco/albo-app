@@ -1,0 +1,25 @@
+{
+  "name": "albo-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scienze-in-gioco/albo-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Scienze-in-gioco/albo-app/issues"
+  },
+  "homepage": "https://github.com/Scienze-in-gioco/albo-app#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "simple-argv": "^1.1.1"
+  }
+}
