@@ -3,9 +3,13 @@ const {
   env = e,
   port = 8080
 } = require("simple-argv")
+
 const express = require("express")
 const app = new express()
 const apiRouter = require("./apiRouter.js")
+const bodyParser = require("body-parser")
+
+app.use(bodyParser.json())
 
 app.use((req, res, next) => {
   res.error = (err, statusCode = 500) => {
