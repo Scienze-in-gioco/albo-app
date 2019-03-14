@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style>
+
+    body {
+      font-family: sans-serif;
+    }
+
+    .titolo {
+      color: red;
+      text-decoration: underline;
+    }
+
+    article h2 {
+      color: blue;
+    }
+
+    #content article:first-child h2 {
+      color: red;
+    }
+
+    article {
+      border: solid black 1px;
+      padding: 10px;
+      margin: 5%;
+      width: 20%;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+
+    /*.contenitore-articoli article:first-child .titolo {
+      color: yellow;
+    }
+    */
+
+    .main-article .titolo {
+      color: yellow;
+    }
+
+    html body article.main-article .titolo {
+      color: magenta;
+    }
+
+    article .testo {
+      color: green;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="content"></div>
+
+  <script type="text/javascript">
+    const content = document.getElementById("content") 
+
+    const createPhotoFrame = (title, url) => {
+      const container = document.createElement("article")
+      content.appendChild(container)
+      const titleElement = document.createElement("h2")
+      titleElement.innerHTML = title
+      container.appendChild(titleElement)
+      const img = document.createElement("img")
+      img.src = url
+      container.appendChild(img)
+    }
+
+    fetch("https://jsonplaceholder.typicode.com/photos")
+      .then(res => res.json())
+      .then(photos => {
+        photos.slice(0, 10).forEach(({ title, thumbnailUrl }) => {
+          createPhotoFrame(title, thumbnailUrl)
+        })
+      })
+      .catch(console.error)
+  </script>
+</body>
+</html>

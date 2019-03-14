@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "db": "docker-compose up",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +24,7 @@
     "jsonwebtoken": "^8.4.0",
     "md5": "^2.2.1",
     "mysql": "^2.16.0",
-    "simple-argv": "^1.1.1"
+    "simple-argv": "^1.1.1",
+    "treeize": "^2.1.2"
   }
 }
